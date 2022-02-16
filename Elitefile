@@ -1,0 +1,18 @@
+required_version is 0.1
+
+set ProjectName as "elitetogo"
+set HOME        as env "HOME"
+
+for specific "linux" [
+    println "fuck"
+]
+
+for argument "install" [
+    use exec "cargo install --path ."
+
+    for exists "{HOME}/.cargo/bin/{ProjectName}" [
+        println "{ProjectName} installed to {HOME}/.cargo/bin/{ProjectName}."
+    ]
+
+    use signal "exit"
+]
